@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Alumnos</title>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana&display=swap">    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <button id="dark-mode-toggle" class="dark-mode-button">🌙</button>
+
+    <table>
+        <caption style="caption-side: top; text-align: center; margin-bottom: 10px; text-transform: uppercase;">Lista de Alumnos</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>MAIL</th>
+                <th>TEMA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center flex-wrap">
+        <button class="button button-green my-2 mx-2">Agregar Alumnos</button>
+        <button class="button button-yellow my-2 mx-2">Actualizar Datos de Alumnos</button>
+        <button class="button button-red my-2 mx-2">Eliminar Alumno</button>
+    </div>
+
+    <script>
+        const body = document.querySelector('body');
+        const table = document.querySelector('table');
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            table.classList.toggle('dark-mode');
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
