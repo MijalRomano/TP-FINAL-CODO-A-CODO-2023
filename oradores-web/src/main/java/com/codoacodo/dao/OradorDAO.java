@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.codoacodo.model.Orador;
 import java.sql.Timestamp;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +22,15 @@ public class OradorDAO {
     private static final String SQL_INSERT = "INSERT INTO oradores(nombre, apellido, mail, tema) VALUES (?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE oradores SET nombre = ?, apellido = ?, mail = ?, tema = ? WHERE ID_ORADOR = ?";
     private static final String SQL_DELETE = "DELETE FROM oradores WHERE ID_ORADOR = ?";
-    
+
+    public OradorDAO(Long idOradorDAO, String nombre, String apellido, String mail, Date fecha) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public OradorDAO() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+   
     public List<Orador> selectOradores() throws SQLException , NullPointerException , ClassNotFoundException ,
                 InstantiationException , IllegalAccessException {
         
@@ -37,14 +46,14 @@ public class OradorDAO {
             rs = stmt.executeQuery(SQL_SELECT);
             
             while(rs.next()) {
-                
+                //revisar las columnas
                 Long idOrador = rs.getLong(1);
-                String nombre = rs.getString(2);
-                String apellido = rs.getString(3);
-                String mail = rs.getString(4);
-                String tema = rs.getString(5);
-                Timestamp fechaAlta = rs.getTimestamp(6);
-                
+                Timestamp fechaAlta = rs.getTimestamp(2);
+                String nombre = rs.getString(3);
+                String apellido = rs.getString(4);
+                String mail = rs.getString(5);
+                String tema = rs.getString(6);
+               
                 orador = new Orador(idOrador, nombre, apellido, mail, tema , fechaAlta);
                 oradores.add(orador);
             }
@@ -64,7 +73,7 @@ public class OradorDAO {
         
         return oradores;
     }
-    
+    //inserar orador
     public int insertarOrador(Orador ora) throws SQLException , NullPointerException , ClassNotFoundException ,
                 InstantiationException , IllegalAccessException {
         Connection conn = null;
@@ -95,7 +104,7 @@ public class OradorDAO {
         }
         return registros;
     }
-    
+    //actualizar orador
     public int actualizarOrador(Orador ora) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -124,7 +133,7 @@ public class OradorDAO {
         return registros;
     }
     
-    
+    //eliminar orador
     public int eliminarOrador(Long i) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -145,5 +154,29 @@ public class OradorDAO {
             }
         }
         return registros;
+    }
+
+    public List<OradorDAO> listarOrador() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void insertarOradorDAO(String nombre, String apellido, String mail, String tema) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public OradorDAO obtenerPorId(long parseLong) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void actualizarOradorDAO(String nombre, String apellido, String mail, String tema) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public List<OradorDAO> buscar(String clave) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void eliminarOradorDAO(Integer valueOf) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
