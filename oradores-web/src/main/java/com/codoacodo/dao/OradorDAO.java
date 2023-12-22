@@ -28,7 +28,6 @@ public class OradorDAO {
     }
 
     public OradorDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
    
     public List<Orador> selectOradores() throws SQLException , NullPointerException , ClassNotFoundException ,
@@ -48,11 +47,11 @@ public class OradorDAO {
             while(rs.next()) {
                 //revisar las columnas
                 Long idOrador = rs.getLong(1);
-                Timestamp fechaAlta = rs.getTimestamp(2);
-                String nombre = rs.getString(3);
-                String apellido = rs.getString(4);
-                String mail = rs.getString(5);
-                String tema = rs.getString(6);
+                String nombre = rs.getString(2);
+                String apellido = rs.getString(3);
+                String mail = rs.getString(4);
+                String tema = rs.getString(5);
+                Timestamp fechaAlta = rs.getTimestamp(6);
                
                 orador = new Orador(idOrador, nombre, apellido, mail, tema , fechaAlta);
                 oradores.add(orador);

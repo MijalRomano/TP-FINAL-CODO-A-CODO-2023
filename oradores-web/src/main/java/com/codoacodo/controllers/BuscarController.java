@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.codoacodo.dao.OradorDAO;
-import com.codoacodo.dao.Conexion;
 
 @WebServlet("/api/BuscarController")
 public class BuscarController extends HttpServlet {
